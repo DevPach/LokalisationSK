@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: sk42-telegram-bot
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python main.py"
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: GIGACHAT_CREDENTIALS
+        sync: false
+      - key: GIGACHAT_VERIFY_SSL_CERTS
+        value: "false"
